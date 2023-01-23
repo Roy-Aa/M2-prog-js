@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Car Animation</title>
+    <style>
+      /* Define the car styles */
+      .car {
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      /* Define the wheels styles */
+      .wheel {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: black;
+        position: absolute;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="car">
+      <div class="wheel" id="wheel1"></div>
+      <div class="wheel" id="wheel2"></div>
+    </div>
+    <script>
+      // Get the car and wheel elements
+      var car = document.querySelector(".car");
+      var wheel1 = document.querySelector("#wheel1");
+      var wheel2 = document.querySelector("#wheel2");
+
+      // Set the initial position of the wheels
+      wheel1.style.left = "25px";
+      wheel2.style.left = "75px";
+
+      // Animate the car
+      function animateCar() {
+        // Move the car to the right
+        car.style.left = parseInt(car.style.left) + 5 + "px";
+        // Rotate the wheels
+        wheel1.style.transform = "rotate(" + parseInt(car.style.left) + "deg)";
+        wheel2.style.transform = "rotate(" + parseInt(car.style.left) + "deg)";
+        // Repeat the animation
+        requestAnimationFrame(animateCar);
+      }
+
+      // Start the animation
+      animateCar();
+    </script>
+  </body>
+</html>
