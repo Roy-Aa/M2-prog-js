@@ -1,2 +1,3 @@
 # M2-prog-js
-![](Javascript_Logo.png)
+- Canvas eindopdracht periode 2
+![]CanvasBO2
